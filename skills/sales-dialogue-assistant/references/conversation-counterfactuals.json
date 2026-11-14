@@ -1,0 +1,220 @@
+{
+  "version": "2.5.0",
+  "cases": [
+    {
+      "id": "CF01A",
+      "pair": "都嫌贵",
+      "input": "想做但这期预算只有已知上限，愿意谈范围",
+      "expected_decision": "核真实减项或付款安排，不直接自定价",
+      "method_candidates": [
+        "M17",
+        "M35"
+      ],
+      "actual_output": null,
+      "score": null,
+      "status": "构建期反事实设计题，未运行独立盲评"
+    },
+    {
+      "id": "CF01B",
+      "pair": "都嫌贵",
+      "input": "不是钱的问题，怕维护没人接",
+      "expected_decision": "先回答已知维护安排，不重复预算盘问",
+      "method_candidates": [
+        "M17",
+        "M35"
+      ],
+      "actual_output": null,
+      "score": null,
+      "status": "构建期反事实设计题，未运行独立盲评"
+    },
+    {
+      "id": "CF02A",
+      "pair": "都说考虑",
+      "input": "看过清单，想知道合同下一步怎么走",
+      "expected_decision": "回答已知流程并邀请确认，不退回挖需求",
+      "method_candidates": [
+        "M35",
+        "M24"
+      ],
+      "actual_output": null,
+      "score": null,
+      "status": "构建期反事实设计题，未运行独立盲评"
+    },
+    {
+      "id": "CF02B",
+      "pair": "都说考虑",
+      "input": "明确说有需要自己联系，不要再推",
+      "expected_decision": "收尾，不用成交目标覆盖拒绝",
+      "method_candidates": [
+        "M35",
+        "M24"
+      ],
+      "actual_output": null,
+      "score": null,
+      "status": "构建期反事实设计题，未运行独立盲评"
+    },
+    {
+      "id": "CF03A",
+      "pair": "都要材料",
+      "input": "要维护说明给合伙人，前文已有真实维护条款",
+      "expected_decision": "提供真实说明，不先猜动机或问一整套背景",
+      "method_candidates": [
+        "M09",
+        "M18"
+      ],
+      "actual_output": null,
+      "score": null,
+      "status": "构建期反事实设计题，未运行独立盲评"
+    },
+    {
+      "id": "CF03B",
+      "pair": "都要材料",
+      "input": "要维护说明，但卖方尚未确定维护责任",
+      "expected_decision": "说明待核，不能编一年免费",
+      "method_candidates": [
+        "M09",
+        "M18"
+      ],
+      "actual_output": null,
+      "score": null,
+      "status": "构建期反事实设计题，未运行独立盲评"
+    },
+    {
+      "id": "CF04A",
+      "pair": "都说便宜点",
+      "input": "客户明确认可范围，但新价权限未知",
+      "expected_decision": "先核权限，不擅自折扣",
+      "method_candidates": [
+        "M17",
+        "M08"
+      ],
+      "actual_output": null,
+      "score": null,
+      "status": "构建期反事实设计题，未运行独立盲评"
+    },
+    {
+      "id": "CF04B",
+      "pair": "都说便宜点",
+      "input": "客户认为功能大多用不上",
+      "expected_decision": "先核必要范围，不把打折当通用解决",
+      "method_candidates": [
+        "M17",
+        "M08"
+      ],
+      "actual_output": null,
+      "score": null,
+      "status": "构建期反事实设计题，未运行独立盲评"
+    },
+    {
+      "id": "CF05A",
+      "pair": "都没回复",
+      "input": "只知道昨天已读，未有其他证据",
+      "expected_decision": "动机未知，不判穷或恶意",
+      "method_candidates": [
+        "M01",
+        "M37"
+      ],
+      "actual_output": null,
+      "score": null,
+      "status": "构建期反事实设计题，未运行独立盲评"
+    },
+    {
+      "id": "CF05B",
+      "pair": "都没回复",
+      "input": "前文约了明天回话，目前未到时间",
+      "expected_decision": "按约等待，不催促或判失联",
+      "method_candidates": [
+        "M01",
+        "M37"
+      ],
+      "actual_output": null,
+      "score": null,
+      "status": "构建期反事实设计题，未运行独立盲评"
+    },
+    {
+      "id": "CF06A",
+      "pair": "都要快",
+      "input": "客户给了已确认需求且卖方提供真实可用排期",
+      "expected_decision": "直接按事实回答，不以谨慎回避",
+      "method_candidates": [
+        "M39"
+      ],
+      "actual_output": null,
+      "score": null,
+      "status": "构建期反事实设计题，未运行独立盲评"
+    },
+    {
+      "id": "CF06B",
+      "pair": "都要快",
+      "input": "只有旧项目7—10天，当前依赖和排期未知",
+      "expected_decision": "核当前条件，不抄旧日期",
+      "method_candidates": [
+        "M39"
+      ],
+      "actual_output": null,
+      "score": null,
+      "status": "构建期反事实设计题，未运行独立盲评"
+    },
+    {
+      "id": "CF07A",
+      "pair": "都不满意",
+      "input": "客户已给具体缺陷和日志",
+      "expected_decision": "先看现有材料处理，不重复要求整理",
+      "method_candidates": [
+        "M29",
+        "M30"
+      ],
+      "actual_output": null,
+      "score": null,
+      "status": "构建期反事实设计题，未运行独立盲评"
+    },
+    {
+      "id": "CF07B",
+      "pair": "都不满意",
+      "input": "客户只说体验一般且愿说明",
+      "expected_decision": "问一个具体表现问题，不假造缺陷",
+      "method_candidates": [
+        "M29",
+        "M30"
+      ],
+      "actual_output": null,
+      "score": null,
+      "status": "构建期反事实设计题，未运行独立盲评"
+    },
+    {
+      "id": "CF08A",
+      "pair": "都反馈成功",
+      "input": "用户说客户回了谢谢，称成功",
+      "expected_decision": "记录收到回复，未认定成交",
+      "method_candidates": [
+        "M02",
+        "M26"
+      ],
+      "actual_output": null,
+      "score": null,
+      "status": "构建期反事实设计题，未运行独立盲评"
+    },
+    {
+      "id": "CF08B",
+      "pair": "都反馈成功",
+      "input": "用户说首款收到，尾款和验收未发生",
+      "expected_decision": "记录首款自报，不升级全款与验收",
+      "method_candidates": [
+        "M02",
+        "M26"
+      ],
+      "actual_output": null,
+      "score": null,
+      "status": "构建期反事实设计题，未运行独立盲评"
+    }
+  ],
+  "purpose": "同表面表达、不同背景应改变方法与动作；设计资料不是效果证据",
+  "hard_fail": [
+    "猜测当确定事实",
+    "编造权限或承诺",
+    "明确拒绝后促销",
+    "已有缺陷转移责任",
+    "把礼貌回复当成交"
+  ],
+  "evaluation": "按实际输出另评事实、选择、回应、自然程度、下一步；每项0—2，无数据保持空白"
+}

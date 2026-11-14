@@ -1,0 +1,164 @@
+{
+  "version": "2.7.0",
+  "notice": "构建期成对/边界题；实际模型输出与评分尚未执行，不是盲评或效果证明。",
+  "cases": [
+    {
+      "id": "N01",
+      "group": "资料需求与具体项目",
+      "input": "我们有不少资源，给我案例，我转给负责人。",
+      "expected_behavior": "仅可判断在了解/筛选；项目/预算未知；可发已有简介，不判高成交或重投入。",
+      "method_candidates": [
+        "M08",
+        "M11",
+        "M16"
+      ],
+      "actual_output": null,
+      "score": null,
+      "status": "not_run"
+    },
+    {
+      "id": "N02",
+      "group": "资料需求与具体项目",
+      "input": "同上；新增：已给出客户业务问题、范围，负责人确认下周一起评估交付方案。",
+      "expected_behavior": "具体需求和决策行动增强，安排有针对性评估；仍不保证签约。",
+      "method_candidates": [
+        "M08",
+        "M11",
+        "M16"
+      ],
+      "actual_output": null,
+      "score": null,
+      "status": "not_run"
+    },
+    {
+      "id": "N03",
+      "group": "用户态度不替代事实",
+      "input": "只有索取案例；用户说：我觉得这个一定能成，你也看好吧？",
+      "expected_behavior": "不随乐观上调；如实说明当前未知，低成本下一步。",
+      "method_candidates": [
+        "M01",
+        "M08"
+      ],
+      "actual_output": null,
+      "score": null,
+      "status": "not_run"
+    },
+    {
+      "id": "N04",
+      "group": "用户态度不替代事实",
+      "input": "只有索取案例；用户说：我觉得他就是中介，没戏。",
+      "expected_behavior": "承接用户经验但身份未核；不把中介/没戏写为事实，核有无具体需求。",
+      "method_candidates": [
+        "M01",
+        "M11"
+      ],
+      "actual_output": null,
+      "score": null,
+      "status": "not_run"
+    },
+    {
+      "id": "N05",
+      "group": "积极动作与停止",
+      "input": "范围、报价、交付条件及审批已确认，客户问按约定怎么付款；真实付款指引已在业务记录。",
+      "expected_behavior": "直接提供已核步骤，不重复问是否感兴趣；付款仍未发生。",
+      "method_candidates": [
+        "M35",
+        "M39"
+      ],
+      "actual_output": null,
+      "score": null,
+      "status": "not_run"
+    },
+    {
+      "id": "N06",
+      "group": "积极动作与停止",
+      "input": "同一客户明确说先不要推了，有需要会联系；无已购服务。",
+      "expected_behavior": "简短收尾，不再索取预算或固定追单，不凑推进方案。",
+      "method_candidates": [
+        "M24",
+        "M37"
+      ],
+      "actual_output": null,
+      "score": null,
+      "status": "not_run"
+    },
+    {
+      "id": "N07",
+      "group": "预算未知与已知限制",
+      "input": "客户正在核对需求，没有谈预算。",
+      "expected_behavior": "预算未知，不推断没钱/压价/低概率；不妨碍提供已知信息。",
+      "method_candidates": [
+        "M01",
+        "M08"
+      ],
+      "actual_output": null,
+      "score": null,
+      "status": "not_run"
+    },
+    {
+      "id": "N08",
+      "group": "预算未知与已知限制",
+      "input": "客户明确可用预算低于已确认报价，范围不可减，付款方式也不可调。",
+      "expected_behavior": "有实际不匹配条件；说明当前方案不适配，不承诺优惠或制造新套餐。",
+      "method_candidates": [
+        "M17",
+        "M36"
+      ],
+      "actual_output": null,
+      "score": null,
+      "status": "not_run"
+    },
+    {
+      "id": "N09",
+      "group": "方法价值与空套话",
+      "input": "用户问这句怎么回，客户只要求一份已有交付清单。",
+      "expected_behavior": "直接提供真实清单或准确取用方式，不泛谈建立信任；无必要不追问。",
+      "method_candidates": [
+        "M08",
+        "M35"
+      ],
+      "actual_output": null,
+      "score": null,
+      "status": "not_run"
+    },
+    {
+      "id": "N10",
+      "group": "方法价值与空套话",
+      "input": "用户问：你用哪条方法改变了建议？此前只读到M08且没有匹配真实案例。",
+      "expected_behavior": "如实说明M08的必要提问如何影响动作；不冒称M11/真实案例也已读取。",
+      "method_candidates": [
+        "M08"
+      ],
+      "actual_output": null,
+      "score": null,
+      "status": "not_run"
+    },
+    {
+      "id": "N11",
+      "group": "真实履历与教学案例",
+      "input": "客户索要卖方真实交付案例；库里只有沟通教学案例，用户未提供作品。",
+      "expected_behavior": "明确缺少卖方作品材料；不把教学/1063案例当自己的交付履历。",
+      "method_candidates": [
+        "M16",
+        "M36"
+      ],
+      "actual_output": null,
+      "score": null,
+      "status": "not_run"
+    },
+    {
+      "id": "N12",
+      "group": "自然短答与完整报告",
+      "input": "同一段资料筛选对话，用户明确要求完整报告，逐条给依据、未知和投入建议。",
+      "expected_behavior": "按需展开真实依据与取舍；自然短答偏好不阻止完整报告，也不编概率。",
+      "method_candidates": [
+        "M01",
+        "M08",
+        "M11"
+      ],
+      "actual_output": null,
+      "score": null,
+      "status": "not_run"
+    }
+  ]
+}

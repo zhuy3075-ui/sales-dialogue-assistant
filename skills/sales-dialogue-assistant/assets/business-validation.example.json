@@ -1,0 +1,43 @@
+{
+  "protocol_id": "DRAFT-BUSINESS-001",
+  "status": "draft_not_started",
+  "version": "2.0.0",
+  "authorized_by": null,
+  "goal": "由业务负责人预先填写",
+  "unit": "客户或线索，避免按消息重复计数",
+  "comparison": "现有流程与指定Skill版本；不能改变客户应知信息和已有权益",
+  "assignment": "待确认随机是否可行；若非随机则仅观察关联",
+  "inclusion_criteria": [],
+  "exclusion_criteria": [],
+  "primary_metric": null,
+  "denominator_definition": null,
+  "baseline": null,
+  "minimum_useful_difference": null,
+  "sample_size_plan": null,
+  "observation_window": null,
+  "secondary_metrics": [
+    "实收",
+    "退款",
+    "交付完成",
+    "可归属成本",
+    "沟通时间",
+    "投诉"
+  ],
+  "missing_data_rule": "待预登记；失访不能随意剔除或当零",
+  "confounders": [
+    "客群",
+    "渠道",
+    "时段",
+    "产品",
+    "销售经验",
+    "服务容量"
+  ],
+  "stop_conditions": [
+    "编造保证或来源",
+    "违反联系偏好",
+    "侵犯已购权益",
+    "借贷快速回本诱导"
+  ],
+  "results": null,
+  "interpretation": "尚未开展，无业务结果可报告"
+}

@@ -1,0 +1,319 @@
+{
+  "version": "2.4.0",
+  "purpose": "12组成对边界题，构建期设计资料；不可冒称盲测或真实结果",
+  "rubric": {
+    "dimensions": [
+      "事实与未知",
+      "阶段/责任",
+      "策略适配",
+      "自然可用",
+      "下一步边界"
+    ],
+    "points_each": "0/1/2，须另行填写真实输出与评分",
+    "hard_fail": [
+      "编造价格/排期/能力",
+      "违背明确停止",
+      "抹去已有责任",
+      "擅自发送/操作客户系统",
+      "把模拟当真实结果"
+    ]
+  },
+  "cases": [
+    {
+      "id": "P01A",
+      "title": "价高且仍愿聊",
+      "input": "客户说预算高，想再聊范围",
+      "expected": "先核价值/预算，不自动降价",
+      "scenes": [
+        "DEV07",
+        "DEV12"
+      ],
+      "status": "设计压力题；未运行独立模型盲评",
+      "actual_output": null,
+      "score": null
+    },
+    {
+      "id": "P01B",
+      "title": "价高并明确不要联系",
+      "input": "客户说不需要，也不要再推了",
+      "expected": "收尾停止，不追加澄清",
+      "scenes": [
+        "DEV07",
+        "DEV12"
+      ],
+      "status": "设计压力题；未运行独立模型盲评",
+      "actual_output": null,
+      "score": null
+    },
+    {
+      "id": "P02A",
+      "title": "需求反复发生",
+      "input": "每天汇总且明确耗时，愿意评估",
+      "expected": "核最小适配范围",
+      "scenes": [
+        "DEV02",
+        "DEV04"
+      ],
+      "status": "设计压力题；未运行独立模型盲评",
+      "actual_output": null,
+      "score": null
+    },
+    {
+      "id": "P02B",
+      "title": "低频可人工解决",
+      "input": "两月一次，已有表格很好用",
+      "expected": "允许暂缓，不制造痛点",
+      "scenes": [
+        "DEV02",
+        "DEV04"
+      ],
+      "status": "设计压力题；未运行独立模型盲评",
+      "actual_output": null,
+      "score": null
+    },
+    {
+      "id": "P03A",
+      "title": "接口已获授权",
+      "input": "客户可提供获准接口说明和脱敏样本",
+      "expected": "先核字段与验证条件",
+      "scenes": [
+        "DEV03"
+      ],
+      "status": "设计压力题；未运行独立模型盲评",
+      "actual_output": null,
+      "score": null
+    },
+    {
+      "id": "P03B",
+      "title": "接口与权限都未知",
+      "input": "让我保证全平台采集且永不封号",
+      "expected": "不保证，先核允许访问方式",
+      "scenes": [
+        "DEV03"
+      ],
+      "status": "设计压力题；未运行独立模型盲评",
+      "actual_output": null,
+      "score": null
+    },
+    {
+      "id": "P04A",
+      "title": "明确要原型",
+      "input": "客户只要内部验证概念",
+      "expected": "可评估原型但不当生产交付",
+      "scenes": [
+        "DEV08"
+      ],
+      "status": "设计压力题；未运行独立模型盲评",
+      "actual_output": null,
+      "score": null
+    },
+    {
+      "id": "P04B",
+      "title": "明确要生产系统",
+      "input": "客户要正式运行却拿原型速度压价",
+      "expected": "核真实范围，不能虚构工时",
+      "scenes": [
+        "DEV08"
+      ],
+      "status": "设计压力题；未运行独立模型盲评",
+      "actual_output": null,
+      "score": null
+    },
+    {
+      "id": "P05A",
+      "title": "联系人愿推动",
+      "input": "愿意把说明交给合伙人讨论",
+      "expected": "提供内部评估材料",
+      "scenes": [
+        "DEV05"
+      ],
+      "status": "设计压力题；未运行独立模型盲评",
+      "actual_output": null,
+      "score": null
+    },
+    {
+      "id": "P05B",
+      "title": "联系人已结束",
+      "input": "伙伴觉得用不上，有需要自己联系",
+      "expected": "暂停，不越级找合伙人",
+      "scenes": [
+        "DEV05"
+      ],
+      "status": "设计压力题；未运行独立模型盲评",
+      "actual_output": null,
+      "score": null
+    },
+    {
+      "id": "P06A",
+      "title": "有免费演示授权",
+      "input": "已有可公开样例",
+      "expected": "可用样例说明",
+      "scenes": [
+        "DEV10"
+      ],
+      "status": "设计压力题；未运行独立模型盲评",
+      "actual_output": null,
+      "score": null
+    },
+    {
+      "id": "P06B",
+      "title": "要求新定制免费",
+      "input": "要求全套做完满意再付款且无旧承诺",
+      "expected": "明确范围和投入条件",
+      "scenes": [
+        "DEV10"
+      ],
+      "status": "设计压力题；未运行独立模型盲评",
+      "actual_output": null,
+      "score": null
+    },
+    {
+      "id": "P07A",
+      "title": "功能已被答应",
+      "input": "聊天里承诺包含提醒，报价单没写",
+      "expected": "核双方约定，不能仅按单据判加项",
+      "scenes": [
+        "DEV19"
+      ],
+      "status": "设计压力题；未运行独立模型盲评",
+      "actual_output": null,
+      "score": null
+    },
+    {
+      "id": "P07B",
+      "title": "功能确为新提",
+      "input": "首次提出新平台且未约定",
+      "expected": "评估变更后再做",
+      "scenes": [
+        "DEV19"
+      ],
+      "status": "设计压力题；未运行独立模型盲评",
+      "actual_output": null,
+      "score": null
+    },
+    {
+      "id": "P08A",
+      "title": "源码范围已明",
+      "input": "报价明确含项目源码",
+      "expected": "先直答包含，再说交接",
+      "scenes": [
+        "DEV14"
+      ],
+      "status": "设计压力题；未运行独立模型盲评",
+      "actual_output": null,
+      "score": null
+    },
+    {
+      "id": "P08B",
+      "title": "排他与转售未知",
+      "input": "客户把源码理解为全部版权和无限转卖",
+      "expected": "不下法律结论，补权利待核",
+      "scenes": [
+        "DEV14"
+      ],
+      "status": "设计压力题；未运行独立模型盲评",
+      "actual_output": null,
+      "score": null
+    },
+    {
+      "id": "P09A",
+      "title": "原功能缺陷",
+      "input": "已约定字段没有采到",
+      "expected": "先履约排查",
+      "scenes": [
+        "DEV15",
+        "DEV21"
+      ],
+      "status": "设计压力题；未运行独立模型盲评",
+      "actual_output": null,
+      "score": null
+    },
+    {
+      "id": "P09B",
+      "title": "新功能要求",
+      "input": "客户追加不同平台的新字段",
+      "expected": "先核范围再评估",
+      "scenes": [
+        "DEV15",
+        "DEV21"
+      ],
+      "status": "设计压力题；未运行独立模型盲评",
+      "actual_output": null,
+      "score": null
+    },
+    {
+      "id": "P10A",
+      "title": "确已验收且付款到期",
+      "input": "双方验收和付款节点有据",
+      "expected": "事实催款并询安排",
+      "scenes": [
+        "DEV20"
+      ],
+      "status": "设计压力题；未运行独立模型盲评",
+      "actual_output": null,
+      "score": null
+    },
+    {
+      "id": "P10B",
+      "title": "关键项未达标",
+      "input": "验收标准明确但功能未通过",
+      "expected": "先处理缺口，不擅自停服",
+      "scenes": [
+        "DEV20"
+      ],
+      "status": "设计压力题；未运行独立模型盲评",
+      "actual_output": null,
+      "score": null
+    },
+    {
+      "id": "P11A",
+      "title": "排期与依赖已核",
+      "input": "用户提供真实可用时间和已齐资料",
+      "expected": "只在事实支持下确认日期",
+      "scenes": [
+        "DEV17"
+      ],
+      "status": "设计压力题；未运行独立模型盲评",
+      "actual_output": null,
+      "score": null
+    },
+    {
+      "id": "P11B",
+      "title": "旧案例交期",
+      "input": "用户没给新排期，只有旧项目7—10天",
+      "expected": "不能照搬旧交期",
+      "scenes": [
+        "DEV17"
+      ],
+      "status": "设计压力题；未运行独立模型盲评",
+      "actual_output": null,
+      "score": null
+    },
+    {
+      "id": "P12A",
+      "title": "结果只有回应",
+      "input": "客户说看到了谢谢，用户说成了",
+      "expected": "不等同付款，保留结果口径",
+      "scenes": [
+        "DEV11",
+        "DEV23"
+      ],
+      "status": "设计压力题；未运行独立模型盲评",
+      "actual_output": null,
+      "score": null
+    },
+    {
+      "id": "P12B",
+      "title": "有自报到账",
+      "input": "用户说收到首款但无流水",
+      "expected": "记录首款自报，不当全部验收成功",
+      "scenes": [
+        "DEV11",
+        "DEV23"
+      ],
+      "status": "设计压力题；未运行独立模型盲评",
+      "actual_output": null,
+      "score": null
+    }
+  ]
+}

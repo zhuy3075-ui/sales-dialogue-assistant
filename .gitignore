@@ -1,0 +1,32 @@
+# Private workspaces and user-generated records belong outside this repository.
+.sales-dialogue-assistant/
+private/
+workspaces/
+deals/
+artifacts/
+history/
+workspace.json
+ASSISTANT_MEMORY.md
+USER_MEMORY.md
+BUSINESS.md
+.write.lock
+.writing-*
+
+# Credentials, local configuration and dependency/cache folders.
+.env
+.env.*
+*.pem
+*.key
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+modules/
+.DS_Store
+Thumbs.db
+
+# Local generated outputs; this repository publishes source files.
+*.zip
+*.log
+*.tmp

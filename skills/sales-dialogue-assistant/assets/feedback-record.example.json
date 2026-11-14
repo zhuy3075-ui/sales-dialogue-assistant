@@ -1,0 +1,27 @@
+{
+  "record_id": "SIM-EXAMPLE-001",
+  "version": "2.0.0",
+  "date": "2026-11-14",
+  "problem_type": "报价嫌贵",
+  "context": "模拟模板：请替换为去识别化的实际关系、阶段与已核事实；未收集真实客户数据。",
+  "selected_plan": "A / B / 自拟 / 未采用",
+  "adoption": "draft_only",
+  "actual_reply": "",
+  "human_edits": "",
+  "reason": "填写采用、修改或未采用的具体原因",
+  "outcome": {
+    "status": "unknown",
+    "window_start": null,
+    "window_end": null,
+    "payment_stage": "unknown",
+    "refund_status": "unknown",
+    "delivery_status": "unknown",
+    "net_receipts": null,
+    "attributable_cost": null,
+    "complaints": null,
+    "note": "未知不是零；意向、定金、全款、退款与交付分开"
+  },
+  "evidence_refs": [],
+  "allow_revision_use": false,
+  "simulation": true
+}

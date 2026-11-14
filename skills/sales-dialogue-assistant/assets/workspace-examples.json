@@ -1,0 +1,106 @@
+{
+  "notice": "全为模拟示例。固定日期及报价不是用户事实，不可直接导入真实工作区。put只取对应data对象；revision使用read实际结果。",
+  "assistant": {
+    "title": "助手画像与协作记忆",
+    "summary": "模拟协作约定",
+    "facts": [
+      {
+        "id": "role",
+        "value": "协助整理业务事实与沟通草稿",
+        "source": "模拟：报价确认消息，不代表用户真实业务",
+        "as_of": "2026-11-14",
+        "scope": "仅本演示商机",
+        "status": "confirmed",
+        "visibility": "internal",
+        "valid_until": null
+      }
+    ]
+  },
+  "user": {
+    "title": "用户画像与偏好记忆",
+    "summary": "模拟用户明确偏好",
+    "facts": [
+      {
+        "id": "voice",
+        "value": "微信自然简短，正式方案详细",
+        "source": "模拟：报价确认消息，不代表用户真实业务",
+        "as_of": "2026-11-14",
+        "scope": "仅本演示商机",
+        "status": "confirmed",
+        "visibility": "internal",
+        "valid_until": null
+      }
+    ]
+  },
+  "business": {
+    "title": "模拟业务资料",
+    "summary": "仅供测试，不是实际报价",
+    "facts": [
+      {
+        "id": "price",
+        "value": "12000元",
+        "source": "模拟：报价确认消息，不代表用户真实业务",
+        "as_of": "2026-11-14",
+        "scope": "仅本演示商机",
+        "status": "confirmed",
+        "visibility": "customer",
+        "valid_until": null
+      }
+    ]
+  },
+  "deal": {
+    "title": "模拟需求演示",
+    "summary": "正在核对需求，不代表真实客户",
+    "customer_id": "demo-client",
+    "phase": "需求确认",
+    "contact_policy": "allowed",
+    "facts": [
+      {
+        "id": "scope",
+        "value": "每日汇总报表",
+        "source": "模拟：报价确认消息，不代表用户真实业务",
+        "as_of": "2026-11-14",
+        "scope": "仅本演示商机",
+        "status": "confirmed",
+        "visibility": "customer",
+        "valid_until": null
+      }
+    ],
+    "events": [],
+    "actions": []
+  },
+  "artifact": {
+    "title": "演示报价草稿",
+    "summary": "不是已发送报价",
+    "facts": [],
+    "type": "proposal",
+    "audience": "customer",
+    "deal_id": "demo-001",
+    "status": "draft",
+    "body": "本次报价12000元，包含每日汇总报表。",
+    "dependencies": [
+      {
+        "kind": "business",
+        "id": "business",
+        "revision": 2
+      },
+      {
+        "kind": "deal",
+        "id": "demo-001",
+        "revision": 1
+      }
+    ],
+    "claims": [
+      {
+        "kind": "business",
+        "id": "business",
+        "fact_id": "price"
+      },
+      {
+        "kind": "deal",
+        "id": "demo-001",
+        "fact_id": "scope"
+      }
+    ]
+  }
+}
