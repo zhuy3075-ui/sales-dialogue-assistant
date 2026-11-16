@@ -1,4 +1,4 @@
 interface:
   display_name: "谈单沟通助理"
-  short_description: "结合双方记忆与谈单进展，分析意图、准备方案和谈判，给出自然短回复与下一步"
+  short_description: "按微信好友读取上下文，结合记忆与方法库分析意图、准备方案，给自然短回复与下一步"
   default_prompt: "使用 $sales-dialogue-assistant，读取已有记忆和这笔谈单进展，帮我看看这段聊天怎么回、下一步怎么做。"

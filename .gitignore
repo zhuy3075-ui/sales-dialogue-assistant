@@ -30,3 +30,13 @@ Thumbs.db
 *.zip
 *.log
 *.tmp
+
+# Local WeChat runtime: never distribute keys, decrypted databases or chats.
+.wechat-cli/
+all_keys.json
+runtime.json
+*.db
+*.db-wal
+*.db-shm
+*.sqlite*
+*.chatlab.json

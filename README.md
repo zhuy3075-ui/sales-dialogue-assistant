@@ -2,7 +2,7 @@
 
 接收聊天、截图、报价单或一个想法，结合业务资料和谈单记录，帮助你判断客户意图、准备回复、讨论方案并持续跟进。
 
-**当前版本：2.7.0 · 内测**。默认按证据中性判断，回复自然、简短。技能需要由支持读取 Skill 文件的 AI 智能体执行，不是独立聊天应用，也不保证提高成交率。
+**当前版本：2.8.0 · 内测**。新增按微信好友昵称、备注或微信号读取本机私聊上下文，并可用ChatLab CLI检索已有报价和约定。默认按证据中性判断，回复自然、简短。技能需要由支持读取 Skill 文件的 AI 智能体执行，不是独立聊天应用，也不保证提高成交率。
 
 ## 适合谁
 
@@ -16,6 +16,7 @@
 
 |任务|直接这样说|产出|
 |---|---|---|
+|读微信上下文|“看看微信里张三最近的聊天，这单该怎么推进？”|唯一匹配的私聊、带时间的依据、短回复和下一步|
 |判断意图|“他这样说，到底在顾虑什么？”|有依据的解释、未知项和适当下一步|
 |写回复|“这个怎么回？短一点，像微信聊天。”|一版结合上下文的回复草稿|
 |看机会|“这单值不值得继续投入？”|按现有证据判断，区分交流意愿与实际采购动作|
@@ -49,13 +50,17 @@ skills/sales-dialogue-assistant/
 
 把完整技能目录或技能 ZIP 交给支持文件操作的智能体，说：
 
-> 帮我安装这个谈单沟通助理；如果已有旧版，先备份并保留我的私人记忆和客户记录。装好后告诉我怎么开始用。
+> 帮我安装这个谈单沟通助理，把本机微信接入的依赖也装好并跑首次自检；有旧版先备份，保留我的私人记忆和客户记录。
 
 宿主能管理本地技能时，可以按它的实际能力安装；只能聊天或只允许上传技能的平台，需要通过该平台提供的安装入口操作。**上传到普通聊天不等于已经安装，也不等于具备长期记忆。**
 
 Codex 本地安装位置为 `$CODEX_HOME/skills/sales-dialogue-assistant`；未设置 `CODEX_HOME` 时为用户目录下的 `.codex/skills/sales-dialogue-assistant`。将技能文件夹完整复制到该位置；已有同名目录先备份。安装后新开会话，或让当前会话重新读取入口文件。
 
 WorkBuddy、豆包、Claude 等宿主的安装入口、脚本执行和文件持久化能力需按当前环境核实，本项目未逐个平台实装验证。
+
+有本地执行能力的Agent安装本包时，在技能根目录运行Windows的 `install.ps1` 或macOS/Linux的 `sh install.sh`。安装器会按系统/架构选择源码与运行时，建立隔离环境，安装WeChat CLI、ChatLab CLI及依赖，并用模拟聊天完成首次自检。已有授权的本机微信配置可直接绑定；首次读取登录进程的数据库密钥需要单独说明并取得同意。依赖装好、账号绑定、真实聊天可读分别验收，不自动提权或修改微信签名。
+
+本轮实装平台为Windows x64；其他系统路由已实现，未实机验证。手机/纯云端AI仍可分析截图，但不能仅凭上传ZIP直接读取电脑微信。完整命令与限制见[微信接入指南](skills/sales-dialogue-assistant/references/wechat-context.md)。
 
 ### 3. 正常说话就能用
 
@@ -151,6 +156,8 @@ python scripts/workspace.py --workspace /your/private/sales-workspace context
 |`case_learning.py`|案例记录、候选经验、审核后启停|
 |`evaluation_tools.py`|处理已有对照答案和反馈；不自动生成模型答案或完成盲评|
 |`workspace.py`|私人 Markdown 记录、版本控制、恢复、待办和产物结构检查|
+|`setup_wechat.py` / `wechat_selftest.py`|隔离依赖安装、系统选择和真实CLI模拟自检|
+|`wechat_context.py` / `wechat_runtime.py`|绑定账号、唯一好友匹配、指定私聊读取、ChatLab本地索引和检索|
 
 脚本的结构检查无法识别所有自然语言矛盾、遗漏引用或改写后的内部信息，客户稿仍需逐项核对事实。
 
@@ -168,8 +175,10 @@ sales-dialogue-assistant/
         ├── SKILL.md
         ├── agents/openai.yaml
         ├── references/          # 方法、证据与按需读取的工作规程
-        ├── scripts/             # 六个标准库辅助工具
-        └── assets/              # 空白模板与模拟示例
+        ├── scripts/             # 原知识/记忆工具，以及微信CLI适配器
+        ├── install.ps1 / install.sh
+        ├── vendor/wechat-cli/   # 附带许可证及修改记录的源码
+        └── assets/              # 模板、模拟示例、npm依赖锁文件
 ```
 
 常用入口：[用户指南](skills/sales-dialogue-assistant/references/user-guide.md) · [自然使用示例](skills/sales-dialogue-assistant/references/usage-examples.md) · [中性判断](skills/sales-dialogue-assistant/references/neutral-assessment.md) · [综合工作台](skills/sales-dialogue-assistant/references/sales-workbench.md) · [嵌入说明](skills/sales-dialogue-assistant/references/embedding.md)。
@@ -182,6 +191,7 @@ sales-dialogue-assistant/
 
 ## 版本与验证状态
 
+- **2.8.0**：本机微信指定私聊读取、ChatLab本地检索、按系统安装及首次模拟自检。媒体内容未自动识别，不自动发消息。
 - **2.7.0**：中性判断、具体自然表达、方法对行动的实际影响。
 - **2.6.0**：双方记忆、业务资料、商机、产物版本及综合工作流。
 - **2.5.0**：根据会话与条件选择方法，而不依赖场景穷举。
@@ -193,6 +203,10 @@ sales-dialogue-assistant/
 ## 常见问题
 
 **装完为什么没自动使用？** 先新开会话，或明确要求使用 `sales-dialogue-assistant`；确认整个技能目录可读，不能只有入口文件。
+
+**可以只报客户昵称吗？** 可以，例如“帮我看看微信里的张三，别替我乐观”。需要本机微信数据可读且账号已连接；重名会让你确认，不会默认第一个。
+
+**聊天会放在哪？** 默认保存在用户主目录的 `.sales-dialogue-assistant/wechat/`，不进入Skill或Git。底层分片解密缓存可能包含其他会话，适配器仅返回选定私聊。用云模型分析时，选定内容会进入当前模型上下文，不能理解为全程离线。
 
 **隔几天回来为什么不记得？** 确认上次确实保存成功，当前宿主使用同一个私人工作区；普通聊天附件不保证持久保存。
 
@@ -207,3 +221,5 @@ sales-dialogue-assistant/
 使用问题请参考[反馈指南](CONTRIBUTING.md)。不要在公开 Issue 中提交客户原始聊天、联系方式、合同、私人记忆或凭据；安全与隐私说明见[SECURITY.md](SECURITY.md)。
 
 **目前未指定开源许可证。** 本仓库未附带统一的授权许可；资料中的第三方内容不因仓库公开而被重新授权。需要复用、再分发或商用时，请先明确相关授权范围。
+
+新增第三方程序保留各自许可：随包WeChat CLI源码采用Apache-2.0；ChatLab CLI由npm独立安装、遵循其AGPL-3.0许可。具体来源、版本和修改见[第三方声明](skills/sales-dialogue-assistant/THIRD_PARTY_NOTICES.md)。本仓库的未授权声明不替代这些组件的原许可。
